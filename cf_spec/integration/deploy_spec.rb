@@ -81,6 +81,12 @@ describe 'CF PHP Buildpack' do
             expect(app.homepage_html).to include('Running on Symfony!')
           end
         end
+
+        it 'deploys a wordpress app' do
+          Machete.deploy_app("wordpress", with_pg: true) do |app|
+            expect(app).to be_deployed
+          end
+        end
       end
     end
 
