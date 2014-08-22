@@ -345,7 +345,7 @@ status "Check elpaaso environment..."
 source $BP_DIR/bin/elpaasochecker
 
 status "Force to elpaaso environment..."
-echo "web: $bindir/heroku-php-apache2" > Procfile
-notice_inline "Force to 'web: $bindir/heroku-php-apache2', no choice on elpaaso"
+echo "web: $bindir/heroku-php-apache2 -c $COMPOSER_VENDOR_DIR/heroku/heroku-buildpack-php/conf/apache2/elpaaso.conf" > Procfile
+notice_inline "Force to 'web: $bindir/heroku-php-apache2 -c $bindir/heroku-php-apache2 -c $COMPOSER_VENDOR_DIR/heroku/heroku-buildpack-php/conf/apache2/elpaaso.conf', no choice on elpaaso"
 
 ######################
