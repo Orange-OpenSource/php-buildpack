@@ -1,7 +1,6 @@
 APP_DIR_TEMP=${__APP_NAME__}_APP_DIR
 APP_DIR_TEMP=${!APP_DIR_TEMP}
  echo "App dir become unwritable..." >&2
-chmod 755 -R $APP_DIR_TEMP
 
 taillogs() {
     # When this exits, exit all back ground process also.
