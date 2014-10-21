@@ -1,6 +1,5 @@
 APP_DIR_TEMP=${__APP_NAME__}_APP_DIR
 APP_DIR_TEMP=${!APP_DIR_TEMP}
- echo "App dir become unwritable..." >&2
 
 taillogs() {
     # When this exits, exit all back ground process also.
@@ -21,6 +20,7 @@ TMPDIR_TEMP=${__APP_NAME__}_TMP_DIR
 if [[ ! -z "${!TMPDIR_TEMP+x}" ]]; then
     echo "Create tmp user folder..." >&2
     TMPDIR=$APP_DIR_TEMP${!TMPDIR_TEMP}
+    export $TMPDIR_TEMP=$TMPDIR
     mkdir -p $TMPDIR
     echo "Tmp user folder become writable and readable..." >&2
     chmod 766 -R $TMPDIR
